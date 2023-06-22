@@ -1,0 +1,70 @@
+@use "./variables" as *;
+
+.movie-container {
+    
+    .movie-search {
+        background: $black;
+        .movie-search-content {
+            @include flexSpaceBetween;
+            min-height: 20vh;
+            border-bottom: 2px solid $red;
+            @include mediaquery700px {
+                flex-direction: column;
+                justify-content: center;
+            }
+            h1 {
+                font-family: 'Alfa Slab One', cursive;
+                font-weight: 100;
+                color: #fff;
+                .red-text {
+                    color: $red;
+                    font-family: 'Alfa Slab One', cursive;
+                }
+            }
+            form {
+                input {
+                    background: #fff;
+                    outline: none;
+                    border: 1px solid #fff;
+                    border-right: none;
+                    padding: 0.5rem 0 0.5rem 1rem;
+                    border-radius: 50px 0 0 50px;
+                    font-size: 1.2rem;
+                }
+                button {
+                    padding: 0.5rem 1rem;
+                    border: 1px solid #fff;
+                    border-radius: 0 50px 50px 0;
+                    cursor: pointer;
+                    background: #fff;
+                    font-size: 1.2rem;
+                    i{
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    .movie-content {
+        min-height: 100vh;
+        padding: 5rem 0;
+        background: $black;
+        .card-list {
+            @include grid;
+            
+            @include mediaquery1300px {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include mediaquery1000px {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include mediaquery700px {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -29,31 +29,31 @@ const url = `https://api.themoviedb.org/3/search/movie?api_key=27cfceb94b2a2f645
 }
 
   return (
-    <div>
-        <form>
-            <label htmlFor="query">Search Movie</label>
-            <input type='text' name="query" className='input' placeholder="Search Movie..." value={query} onChange={(e) => setQuery(e.target.value)}/>
-            <button type='submit' onClick={searchMovies}>Search</button>
-        </form>
-
-        <div className="card-list">
-          {movies.filter(movie => movie.poster_path).map(movie => {
-            return(
-              // <div className="card" key={movie.id}>
-              //   <img className="card--image"
-              //               src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={movie.title + "poster"}/>
-              //   <div className="card-content">
-              //   <h3>{movie.title}</h3>
-              //   <p>Release Date: {movie.release_date}</p>
-              //   <p>Rating: {movie.vote_average}</p>
-              //   <p>{movie.overview}</p>
-              // </div>
-              // </div>
-              <MovieCard movie={movie} key={movie.id}/>
-            )
-          })}
+    <div className='movie-container'>
+     <div className="movie-search">
+      <div className="wrapper">
+        <div className="movie-search-content">
+        <h1>Search <span className='red-text'>Movies</span></h1>
+        <form>        
+                <input type='text' name="query" className='input' placeholder="Search Movie..." value={query} onChange={(e) => setQuery(e.target.value)}/>
+                <button type='submit' onClick={searchMovies}><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
-       
+      </div>
+      
+     </div>
+     
+        <div className="movie-content">
+        <div className="wrapper">
+            <div className="card-list">
+                {movies.filter(movie => movie.poster_path).map(movie => {
+                  return(
+                    <MovieCard movie={movie} key={movie.id}/>
+                  )
+                })}
+              </div>
+              </div>
+          </div>
     </div>
   )
 }

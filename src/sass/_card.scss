@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+.card {
+    .card-image {
+        width: 100%;       
+        object-fit: cover;
+    }
+    .card-content {
+        color: #fff;
+        padding: 1rem;
+        h3 {
+            padding: 1rem 0;
+            font-family: 'Kanit', sans-serif;
+        }
+        p {
+            &:nth-child(odd) {
+                padding-bottom: 1rem;
+            };
+        }
+    }
+}

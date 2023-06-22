@@ -1,0 +1,41 @@
+$blue: #0092ca;
+$black: #222831;
+$darkGray: #393e46;
+$lightGray: #eeeeee;
+$red: rgb(255, 134, 134);
+
+@mixin grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@mixin mediaquery1300px {
+    @media (max-width: 1300px) {
+        @content;
+    }
+}
+@mixin mediaquery1000px {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+@mixin mediaquery700px {
+    @media (max-width: 700px) {
+        @content;
+    }
+}
