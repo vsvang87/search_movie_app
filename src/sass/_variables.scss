@@ -24,18 +24,14 @@ $red: rgb(255, 134, 134);
     justify-content: flex-end;
     align-items: center;
 }
-@mixin mediaquery1300px {
-    @media (max-width: 1300px) {
+
+@mixin mediaquery950px {
+    @media (max-width: 950px) {
         @content;
     }
 }
-@mixin mediaquery1000px {
-    @media (max-width: 1000px) {
-        @content;
-    }
-}
-@mixin mediaquery700px {
-    @media (max-width: 700px) {
+@mixin mediaquery650px {
+    @media (max-width: 650px) {
         @content;
     }
 }

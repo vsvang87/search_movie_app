@@ -1,21 +1,35 @@
 @use "./variables" as *;
 
 .card {
+    display: flex;
+    border-bottom: 2px solid $red;
+    width: 100%;
+    padding: 2.5rem 0;
+    @include mediaquery950px {
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
     .card-image {
-        width: 100%;       
-        object-fit: cover;
+        min-width: 20%;  
+          
     }
     .card-content {
         color: #fff;
-        padding: 1rem;
+        width: 50%;
+        padding: 0 10rem 0 2rem;
+
+        @include mediaquery950px {
+            width: 100%;
+            padding: 1rem 0 0 0;
+        }
         h3 {
-            padding: 1rem 0;
+            padding:0 0 1rem 0;
             font-family: 'Kanit', sans-serif;
         }
         p {
-            &:nth-child(odd) {
-                padding-bottom: 1rem;
-            };
+           padding-bottom: 1rem;
         }
     }
 }
